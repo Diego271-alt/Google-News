@@ -53,6 +53,7 @@
     align-items: center;
     border-top: 5px solid;
     border-top-color: #34a853;
+    z-index: 10;
 
 }
 
