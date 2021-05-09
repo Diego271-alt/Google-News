@@ -37,13 +37,7 @@ function App() {
   const handleSearch = () => {
     setSearch(searchInput.current.value);
   };
-  const filteredArticles = useMemo(
-    () =>
-      articles.filter((article) => {
-        return article.source.name.toLowerCase().includes(search.toLowerCase());
-      }),
-    [articles, search]
-  );
+
 
   return (
     <div className="App">
