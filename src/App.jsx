@@ -81,7 +81,7 @@ function App() {
                 Next Page
               </button>
             </div>
-            {filteredArticles.map((article) => (
+            {articles.map((article) => (
               <ItemNew  key={article.publishedAt} article={article} />
             ))}
           </div>
