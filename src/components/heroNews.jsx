@@ -7,7 +7,12 @@ export default function HeroNews(props) {
   useEffect(() => {
     setLoadData(true);
     fetch(
-      "https://newsapi.org/v2/everything?q=technology&apiKey=5dac76dc0f65416daf2e30ad83b408cf"
+      "https://newsapi.org/v2/everything?q=technology&apiKey=5dac76dc0f65416daf2e30ad83b408cf",{
+        method:"GET",
+        headers:{"Cookie":"__cfduid=d987d76f971cd30ebbd8302e1c67386271620511423"}, 
+        redirect: 'follow'
+      }
+      
     )
       .then((response) => response.json())
       .then((data) => {
