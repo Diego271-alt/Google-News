@@ -57,11 +57,11 @@ function App() {
             <div className="bodyNews__listnews--header">
               <h1>Read More</h1>
             </div>
-            <div class=" input-group mb-3">
+            <div className=" input-group mb-3">
               <button
                 type="button"
                 onClick={() => changePage(page - 1)}
-                class="btn btn-outline-success"
+                className="btn btn-outline-success"
               >
                 Prev Page
               </button>
@@ -75,15 +75,14 @@ function App() {
               />
               <button
                 type="button"
-                class="btn btn-outline-danger"
+                className="btn btn-outline-danger"
                 onClick={() => changePage(page + 1)}
               >
                 Next Page
               </button>
             </div>
-            {}
             {filteredArticles.map((article) => (
-              <ItemNew article={article} />
+              <ItemNew  key={article.publishedAt} article={article} />
             ))}
           </div>
         )}

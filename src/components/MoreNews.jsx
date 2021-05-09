@@ -21,7 +21,7 @@ export default function MoreNews() {
     <ol className="list-group list-group-numbered">
 
             {
-              articles.map(article =>(<ItemMoreNews article={article} />))
+              articles.map(article =>(<ItemMoreNews key={article.publishedAt} article={article} />))
             }
 
   </ol>

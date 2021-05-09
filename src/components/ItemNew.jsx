@@ -10,7 +10,7 @@ export default function ItemNew(props) {
     Aos.init({duration:2000})
   }, [])
   return (
-    <div  data-aos="fade-right" className="Card">
+    <div key={article.publishedAt} data-aos="fade-right" className="Card">
       <div className="card-body">
         <img
           src={article.urlToImage}

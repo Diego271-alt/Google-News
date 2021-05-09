@@ -18,7 +18,7 @@ export default function Articles() {
     <div className="bodyNews__listnews--header">
       <h1>Leer más</h1>
       {articles.map((article) => (
-        <ItemNew article={article} />
+        <ItemNew  article={article} />
       ))}
     </div>
   );
