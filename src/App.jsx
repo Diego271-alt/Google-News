@@ -71,7 +71,7 @@ function App() {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Til"
+                placeholder="Title"
                 value={search}
                 ref={searchInput}
                 onChange={handleSearch}
