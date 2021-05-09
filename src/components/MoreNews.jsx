@@ -1,29 +1,22 @@
-import React , {useState, useEffect}from "react";
-import ItemMoreNews from './ItemMoreNews'
-
-
+import React, { useState, useEffect } from "react";
+import ItemMoreNews from "./ItemMoreNews";
 
 export default function MoreNews() {
-  const [articles, setArticle] = useState([]);
-  const [loadData, setLoadData] = useState(false);
+  const [periodists, setPeriodist] = useState([]);
+
   useEffect(() => {
-    setLoadData(true);
-    fetch(
-      "https://newsapi.org/v2/everything?q=economy&apiKey=5dac76dc0f65416daf2e30ad83b408cf"
-    )
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data) => {
-        setArticle(data.articles);
-        setLoadData(false);
+        setPeriodist(data);
       });
   }, []);
+
   return (
     <ol className="list-group list-group-numbered">
-
-            {
-              articles.map(article =>(<ItemMoreNews key={article.publishedAt} article={article} />))
-            }
-
-  </ol>
+      {periodists.map((periodist) => (
+        <ItemMoreNews key={periodist.id} periodist={periodist} />
+      ))}
+    </ol>
   );
 }

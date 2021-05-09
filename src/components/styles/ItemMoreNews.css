@@ -1,0 +1,22 @@
+
+@media (max-width: 560px) {
+
+    #info p{
+        font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+
+    #info p{
+        font-size: 0.6rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+
+    #info p{
+        visibility: hidden;
+        font-size: 0.1rem;
+    }
+  }

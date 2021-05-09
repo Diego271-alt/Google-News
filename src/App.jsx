@@ -8,41 +8,45 @@ import "./App.css";
 import useData from "./hooks/useData";
 
 function App() {
-  const {
-    page,
-    load,
-    articles,
-    changePage,
-    loadData,
-    storeData,
-  } = useData({
+  const { page, load, articles, changePage, loadData, storeData } = useData({
     initalarticles: [],
     initialpage: 1,
     initialloadData: false,
   });
-  const [search, setSearch]= useState('')
+  const [search, setSearch] = useState("");
 
   const searchInput = useRef(null);
   useEffect(() => {
     loadData(true);
     fetch(
-      `https://newsapi.org/v2/everything?q=digital&page=${page}&apiKey=5dac76dc0f65416daf2e30ad83b408cf`,{
-        method:"GET",
-        headers:{"Cookie":"__cfduid=d987d76f971cd30ebbd8302e1c67386271620511423"}, 
-        redirect: 'follow'
+      `https://free-news.p.rapidapi.com/v1/search?q=Digital%20Economy&lang=en&page=${page}`,
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-key":
+            "ca4e8559bfmshb36feb647ab99e4p1b37e4jsn3108e78e485c",
+          "x-rapidapi-host": "free-news.p.rapidapi.com",
+        },
+        redirect: "follow",
       }
     )
       .then((response) => response.json())
       .then((data) => {
-        storeData(data.articles);
+        storeData(data.articles)
         loadData(false);
       });
   }, [page]);
   const handleSearch = () => {
     setSearch(searchInput.current.value);
   };
-  console.log(articles)
 
+  const filteredArticles = useMemo(
+    () =>
+      articles.filter((article) => {
+        return article.title.toLowerCase().includes(search.toLowerCase());
+      }),
+    [articles, search]
+  );
 
   return (
     <div className="App">
@@ -67,7 +71,7 @@ function App() {
               <input
                 type="text"
                 className="form-control"
-                placeholder="NewYork Times"
+                placeholder="Til"
                 value={search}
                 ref={searchInput}
                 onChange={handleSearch}
@@ -80,15 +84,15 @@ function App() {
                 Next Page
               </button>
             </div>
-            {articles.map((article) => (
-              <ItemNew  key={article.publishedAt} article={article} />
+            {filteredArticles.map((article) => (
+              <ItemNew key={article._id} article={article} />
             ))}
           </div>
         )}
 
         <div className="bodyNews__morenews">
           <div className="bodyNews__morenews--header">
-            <h1>Others</h1>
+            <h1>Writers</h1>
 
             <ItemMoreNews />
           </div>
