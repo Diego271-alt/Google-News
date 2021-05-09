@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Google-News/static/css/main.eda5cdc2.chunk.css",
+    "main.css": "/Google-News/static/css/main.d2f427dd.chunk.css",
     "main.js": "/Google-News/static/js/main.20f48f43.chunk.js",
     "main.js.map": "/Google-News/static/js/main.20f48f43.chunk.js.map",
     "runtime-main.js": "/Google-News/static/js/runtime-main.8e03528e.js",
@@ -10,14 +10,14 @@
     "static/js/2.5d708199.chunk.js.map": "/Google-News/static/js/2.5d708199.chunk.js.map",
     "index.html": "/Google-News/index.html",
     "static/css/2.a54c45d6.chunk.css.map": "/Google-News/static/css/2.a54c45d6.chunk.css.map",
-    "static/css/main.eda5cdc2.chunk.css.map": "/Google-News/static/css/main.eda5cdc2.chunk.css.map",
+    "static/css/main.d2f427dd.chunk.css.map": "/Google-News/static/css/main.d2f427dd.chunk.css.map",
     "static/js/2.5d708199.chunk.js.LICENSE.txt": "/Google-News/static/js/2.5d708199.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8e03528e.js",
     "static/css/2.a54c45d6.chunk.css",
     "static/js/2.5d708199.chunk.js",
-    "static/css/main.eda5cdc2.chunk.css",
+    "static/css/main.d2f427dd.chunk.css",
     "static/js/main.20f48f43.chunk.js"
   ]
 }
